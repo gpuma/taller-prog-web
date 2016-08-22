@@ -1,0 +1,12 @@
+Práctica 4
+----------
+Deberá realizar las actividades indicadas en 
+los siguientes archivos del proyecto Practica4:
+  
+  1. CrearUsuario.aspx
+  2. Usuario.cs
+  3. CrearUsuario.aspx.cs
+  4. Login.aspx.cs
+
+Se recomienda que complete las actividades
+en el orden indicado.
