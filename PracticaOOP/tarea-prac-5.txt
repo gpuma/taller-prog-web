@@ -1,6 +1,6 @@
 Revise los archivos en el sgte. orden:
 
-1. Figura.cs
+1. Poligono.cs
 2. Triangulo.cs
 3. Rectangulo.cs
 4. AreaPoligonos.aspx
