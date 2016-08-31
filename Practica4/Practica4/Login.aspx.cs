@@ -35,9 +35,21 @@ namespace Practica4
                 //para esto tendrá que obtener el objeto del SessionState,
                 //convertirlo (cast) a tipo de dato 'Usuario' y comparar su
                 //propiedad password con el password ingresado
-                
+
+                //esto es un cast o conversión. Recuerde que Session
+                //guarda objetos del tipo Object, por eso esto
+                Usuario user = (Usuario)Session[txtNomUsuario.Text];
+
                 //Sí la contraseña es correcta, redirija al form. Exito.aspx
                 //si no, muestre un mensaje apropiado
+                
+                //Para poder mostrar los datos requeridos en el form Exito.aspx
+                //debe enviarle el nombre de usuario de modo que este Web Form
+                //pueda recuperar al Usuario desde Session
+                //para esto utilizaremos parámetros de dirección
+                //TIP: podemos usar txtNomUsuario porque ya verificamos que
+                //el nombre de usuario ingresado existe en esta parte del código
+                Response.Redirect("Exito.aspx?nomUsr=" + txtNomUsuario.Text);
             }
         }
     }
