@@ -1,0 +1,11 @@
+En esta práctica aprenderá a usar páginas maestras, controles de usuarios y
+controles de navegación
+
+Visite los archivos en el siguiente orden:
+
+1. Maestra.Master
+2. Maestra.Master.cs
+3. Web.sitemap
+4. LoginCtrl.ascx
+
+Buena suerte!

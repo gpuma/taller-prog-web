@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Maestra.master.cs" Inherits="Practica6.Maestra" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%--Para esta práctica Ud. definirá alguna empresa imaginaria o existente y realizará una página web con los datos respectivos--%>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Páginas Maestras</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table border="1">
+    <tr>
+        <td colspan = "2">
+            <%--TODO: Actividad 1: Cree o use algún logo para su empresa y reemplace el actual. Esta es la cabecera--%>
+            <img src="logo.png" alt="Logo de la empresa" align="left" style="width:512px;height:64px;"/>
+        </td>
+    </tr>
+    <tr>
+        <%--menu--%>
+        <td>
+            <%-- El objeto del tipo SiteMapDataSource se encarga de AUTOMÁTICAMENTE cargar
+              -- la estructura del sitio que especificamos en WEB.SITEMAP
+              -- Luego simplemente indicamos a nuestro control TreeView (vista de árbol)
+              -- que la fuente de datos es nuestro objeto SiteMapDataSource
+            --%>
+            <asp:SiteMapDataSource ID="FuenteDatosNavegacion" runat="server" />
+            <%-- TODO: Actividad 2: Haga que el control TreeView indique visualmente
+              -- en qué página se encuentra actualmente, puede hacer el item del menú
+              -- más grande, cambiarle de color, ponerlo en negrita, etc.
+              -- TIP: Revise las propiedades que empiezan con el nombre SelectedNodeStyle...
+              --%>
+            <asp:TreeView ID="TreeView1" runat="server"
+                 DataSourceID="FuenteDatosNavegacion">
+            </asp:TreeView>
+        </td>
+        <%--cuerpo--%>
+        <td>
+        <%--ÉSTA es la plantilla que será reemplazada por cualquier página que use esta página Maestra--%>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        </td>
+    </tr>
+    <%--
+      -- TODO: Actividad 3: Deberá agregar un pie de página con la dirección y teléfonos de su empresa
+      -- Recuerde que está dentro de una tabla así que deberá ingresar esa información dentro de una celda
+      -- Básese en el ejemplo de la cabecera. Esta tabla es HTML puro.
+      --%>
+    </table>
+    </form>
+</body>
+</html>

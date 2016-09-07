@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/Default.aspx" title="Bienvenido!"  description="">
+      <siteMapNode url="~/Pagina1.aspx" title="pag1"  description=""/>
+        <!--TODO: Actividad 6: agregue al SiteMap las tres páginas
+          que creó en el paso anterior, de manera que aparezcan en la
+          estructura de arbol. Ésta es la estructura deseada:
+          bienvenido
+            ->pag1
+            ->pag2
+                ->pag3
+                ->pag4
+          Osea que pag3 y pag4 tienen que ser nodos "hijos" de pag2
+          TIP: ya hay un padre y un hijo en este SiteMap
+          -->
+    </siteMapNode>
+</siteMap>
