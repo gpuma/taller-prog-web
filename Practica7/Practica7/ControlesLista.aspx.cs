@@ -31,10 +31,14 @@ namespace Practica7
             //y como valor utilice el código del lenguaje.
             //Revise las propiedades DataTextField y DataValueField de ListBox
 
+            //chkLeng.DataTextField = "Nombre";
+            //chkLeng.DataValueField = "Nombre";
 
             drpLenguajes.DataBind();
 
             //TODO: Actividad X: Haga lo mismo que arriba pero para el ListBox lstLengDisponibles
+            //TODO: Actividad X: Haga lo mismo que arriba pero para el CheckBoxList chkLeng
+
         }
 
         public void drpLenguajes_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,6 +76,38 @@ namespace Practica7
         {
             //TODO: Actividad X: Realice la opción inversa del método btnAgregar_Click.
             //Quite elementos de lstLengConocidos y regréselos a lstLengDisponibles
+        }
+
+        protected void chkLeng_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //TODO: Actividad X: En esta sección tiene que mostrarle al usuario
+            //cuáles son los lenguajes que ha seleccionado. Es decir, si le dio check
+            //a C# y Haskell debería mostrarle un mensaje como: "Usted ha seleccionado C#, Haskell"
+
+            //Para esta tarea deberá emplear un bucle, ya se le muestra la estructura de
+            //un bucle foreach, que es una versión simplificada del FOR, que no utiliza índices
+            //En este bucle Ud. deberá iterar por cada Item del CheckBoxList, verificar
+            //si ha sido seleccionado, y si es así, agregar el lenguaje a su mensaje final
+
+            //Para poder agregar mensajes de manera iterativa, puede utilizar
+            // el operador de concatenación e incremento de cadenas (+=)
+            //Por ejemplo, si tengo lo siguiente:
+                //string msj = "Adiós,";
+            //Si agrego la sgte instrucción
+                //msj += "mundo cruel";
+            //msj ahora contendría "Adiós,mundo cruel"
+
+            string mensaje = "Usted ha seleccionado: ";
+            foreach(ListItem item in chkLeng.Items)
+            {
+                //AQUÍ SU CÓDIGO
+            }
+
+            lblCheck.Text = mensaje;
+
+            //TODO: PUNTO EXTRA
+            //Si no hay ningún item seleccionado (o cuando se deseleccionen todos los items)
+            //muestre un mensaje que lo diga
         }
     }
 }
