@@ -31,7 +31,10 @@ namespace Practica7
             //y como valor utilice el código del lenguaje.
             //Revise las propiedades DataTextField y DataValueField de ListBox
 
+
             drpLenguajes.DataBind();
+
+            //TODO: Actividad X: Haga lo mismo que arriba pero para el ListBox lstLengDisponibles
         }
 
         public void drpLenguajes_SelectedIndexChanged(object sender, EventArgs e)
@@ -42,14 +45,33 @@ namespace Practica7
             //TIP: Revise las propiedades de DropDownList.SelectedItem (item seleccionado)
         }
 
-        protected void Unnamed1_Click(object sender, EventArgs e)
+        protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            //var item = lstLengDisponibles.SelectedItem;
-            //lstLengDisponibles.Items.Remove(item);
-            //lstLengDisponibles.SelectedIndex = -1;
+            //TODO: Actividad X: Añada una validación al comienzo en la que el método actual
+            //finalice (return) SI no hay ningún item seleccionado o si no quedan items
+            //TIP: Utilice ListBox.Items.Count para obtener el número de items
+            //TIP: Utilice ListBox.SelectedItem para ver si hay algún item seleccionado
 
-            //item.Selected = false;
-            //lstLengConocidos.Items.Add(item);
+
+            //obtenemos el item seleccionado por el usuario
+            ListItem itemSelec = lstLengDisponibles.SelectedItem;
+
+            //le cambiamos su propiedad Selected a False porque sino
+            //resultaremos con un ListBox con múltiples valores seleccionados
+            //y como no tiene opción de selección múltiple resulta en error
+            itemSelec.Selected = false;
+
+            //lo quitamos de la lista de lenguajes disponibles
+            lstLengDisponibles.Items.Remove(itemSelec);
+
+            //lo agregamos a la lsita de lenguajes conocidos
+            lstLengConocidos.Items.Add(itemSelec);
+        }
+
+        protected void btnQuitar_Click(object sender, EventArgs e)
+        {
+            //TODO: Actividad X: Realice la opción inversa del método btnAgregar_Click.
+            //Quite elementos de lstLengConocidos y regréselos a lstLengDisponibles
         }
     }
 }

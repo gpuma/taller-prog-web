@@ -11,6 +11,7 @@
     
     <h1>Controles Lista</h1>
     <h2>Demo DropDownList</h2>
+    <p>Seleccione un lenguaje de la lista:</p>
     <div>
         <asp:DropDownList ID="drpLenguajes" AutoPostBack="true" runat="server"
          OnSelectedIndexChanged="drpLenguajes_SelectedIndexChanged" />
@@ -22,8 +23,8 @@
         <%--<h3>Lenguajes Disponibles</h3>--%>
         <asp:ListBox ID="lstLengDisponibles" runat="server"/>
         
-        <asp:Button Text="<<" runat="server" onclick="Unnamed1_Click" />
-        <asp:Button ID="Button1" Text=">>" runat="server" onclick="Unnamed1_Click" />
+        <asp:Button ID="btnAgregar" Text=">>" runat="server" onclick="btnAgregar_Click" />
+        <asp:Button ID="btnQuitar" Text="<<" runat="server" onclick="btnQuitar_Click" />
         
         <%--<h3>Lenguajes Seleccionados</h3>--%>
         <asp:ListBox ID="lstLengConocidos" runat="server"/>
