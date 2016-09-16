@@ -10,6 +10,7 @@ namespace Practica7
         public int Codigo { get; set; }
         public string Nombre { get; set; }
     }
+    
     public class Producto
     {
         public int Codigo { get; set; }
@@ -19,6 +20,10 @@ namespace Practica7
         public double Stock { get; set; }
         public bool Descontinuado { get; set; }
         public DateTime FechaRegistro { get; set; }
+
+        //TODO: Actividad 1: Añada una propiedad que sea
+        //la descripción del Producto e ingrese una descripción apropiada
+        //cuando inserte sus datos
     }
 
     //Modelo es un término que suele referirse a una (o más) bases de datos. Como todavía no hemos visto
@@ -50,18 +55,18 @@ namespace Practica7
                 Precio = 2039.99,
                 Stock = 5,
                 Descontinuado = false,
-                FechaRegistro = new DateTime(2016, 09, 31)
+                FechaRegistro = new DateTime(2016, 09, 30)
             };
             productos.Add(prod);
 
-            //TODO: Actividad X: Añada 7 productos más
+            //TODO: Actividad 2: Añada 7 productos más
 
             return productos;
         }
 
         public static List<Lenguaje> ObtenerLenguajes()
         {
-            //TODO: Actividad X: Añada 7 lenguajes más
+            //TODO: Actividad 3: Añada 7 lenguajes más
             List<Lenguaje> lenguajes = new List<Lenguaje>()
             {
                 new Lenguaje{ Codigo= 1, Nombre= "C#"},

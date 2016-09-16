@@ -50,6 +50,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+     <Content Include="ControlesComplejos.aspx" />
     <Content Include="ControlesLista.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -58,6 +59,15 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ControlesComplejos.aspx.cs">
+      <DependentUpon>ControlesComplejos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlesComplejos.aspx.designer.cs">
+      <DependentUpon>ControlesComplejos.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControlesLista.aspx.cs">

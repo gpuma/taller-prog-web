@@ -1,0 +1,11 @@
+En esta práctica se familiarizará con los conceptos de Data Binding
+
+Visite los archivos en el siguiente orden y realice las actividades:
+
+1. Modelo.cs
+2. ControlesLista.aspx
+3. ControlesLista.aspx.cs
+3. ControlesComplejos.aspx
+4. ControlesComplejos.aspx.cs
+
+Buena suerte!
