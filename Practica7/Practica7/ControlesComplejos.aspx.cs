@@ -18,14 +18,14 @@ namespace Practica7
         //Este evento se da cuando se ha seleccionado un item en el GridVIew
         protected void grdProductos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //TODO: Actividad X: Haga que el control dtlProductos muestre
+            //TODO: Actividad 14: Haga que el control dtlProductos muestre
             //el detalle del item seleccionado en el grdProductos
             //TIP: Revise la documentación de las propiedades PageIndex 
             //y SelectedIndex de ambos controles, respectivamente.
 
             //SU CÓDIGO AQUÍ
 
-            //TODO: Actividad X: Haga que el control dtlProductos se muestre
+            //TODO: Actividad 15: Haga que el control dtlProductos se muestre
             //porque por defecto se está cargando oculto
 
 

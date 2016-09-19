@@ -17,7 +17,7 @@
         para que cuando se haga click muestre el detalle del Producto. Para indicar
         el item que ha sido seleccionado también se aplica un estilo
         
-        ANTES de continuar haga la Actividad 10 en el archivo code-behind--%>
+        ANTES de continuar haga la Actividad 11 en el archivo code-behind--%>
 
         <asp:GridView ID="grdProductos" runat="server" AutoGenerateColumns="false"
             SelectedRowStyle-BackColor="Blue" SelectedRowStyle-ForeColor="White"
@@ -27,10 +27,10 @@
                     HeaderText="Codigo" DataTextField="Codigo" />
                 <asp:BoundField DataField="Nombre" HeaderText="Nombre"/>
 
-                <%-- TODO: Actividad 11: añada los campos restantes de la clase Producto
-                     Excepto el Proveedor y Descontinuado--%>
+                <%-- TODO: Actividad 12: añada los campos restantes de la clase Producto
+                     Excepto el Proveedor, Descontinuado y Descripción--%>
                 
-                <%-- TODO: Actividad 12: Muestre solo la fecha para el campo FechaRegistro
+                <%-- TODO: Actividad 13: Muestre solo la fecha para el campo FechaRegistro
                     TIP: Revise la propiedad DataFormatString y use el siguiente formato
                     "{0:dd/MM/yyyy}"--%>
                 
@@ -44,7 +44,7 @@
         en el GridView--%>
         <%--OJO: Los controles de este tipo por defecto auto generan columnas si no
             especificamos nada explícitamente--%>
-        <asp:DetailsView ID="dtlProductos" Visible="true" runat="server"/>
+        <asp:DetailsView ID="dtlProductos" Visible="false" runat="server"/>
     </div>
     </form>
 </body>
