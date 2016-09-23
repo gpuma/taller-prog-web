@@ -9,15 +9,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    <asp:GridView ID="grdMatriz" runat="server" AutoGenerateColumns="false">
-    <Columns>
-        <asp:TemplateField HeaderText="hola">
-            <ItemTemplate>
-                <asp:TextBox Text='<%# Eval("hola") %>' runat="server"/>
-            </ItemTemplate>
-        </asp:TemplateField>
-    </Columns>
+    <asp:GridView ID="grdMatriz" runat="server" AutoGenerateColumns="false" ShowHeader="false">
     </asp:GridView>
+    <asp:Button ID="btnCalc" Text="Calcular" OnClick="btnCalc_Click" runat="server"/>
     </div>
     </form>
 </body>
