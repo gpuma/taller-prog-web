@@ -11,19 +11,18 @@ namespace Practica8
 {
     public partial class Default : System.Web.UI.Page
     {
-        //todo: mover a otro lado
-        public class NotaEstudiante
-        {
-            public int IDMatricula;
-            public int IDCurso;
-            public int IDEstudiante;
-            public double? Nota;
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            grd.DataSource = Modelo.ObtenerPaises();
+            var ds = Modelo.ObtenerPaises();
+            grd.DataSource = ds;
             grd.DataBind();
+            
+            //var p = ds[7];
+            //p.nom_pais="Corea del sur";
+            //p.pbi_pais=777;
+
+            //Modelo.ActualizarPais(p);
+            //Modelo.EliminarPais(11);
         }
     }
 }

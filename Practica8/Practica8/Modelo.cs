@@ -43,6 +43,8 @@ namespace Practica8
 
                 //DataSet.Tables[0] obtiene la primera tabla (DataTable) del DataSet. A menos que traigamos
                 //múltiples tablas al mismo tiempo usualmente emplearemos este comando
+                //También podemos usar DataSet.Tables["Pais"]
+
                 //DataTable.AsEnumerable() convierte toda la colección de filas a una colección Enumerable,
                 //es decir, podemos utilizar esta colección en expresiones LINQ, que es lo que hacemos a continuación
                 //Select() proyecta cada elemento (fila) a otra forma, mediante una expresión LINQ
@@ -63,6 +65,86 @@ namespace Practica8
                 //Básicamente, el bloque anterior convierte un DataTable a una Lista de Paises (List<Pais>)
             }
             return paises;
+        }
+
+        public static int InsertarPais(Pais p)
+        {
+            using (var con = new SqlConnection(con_str))
+            //pequeño truco que no trae ningún dato pero basta para obtener la estructura de la tabla
+            //como vamos a insertar un registro nuevo no necesitamos traer los datos existentes
+            using (var da = new SqlDataAdapter("SELECT * FROM Pais WHERE 0 = 1", con))
+            {
+                var ds = new DataSet();
+                da.Fill(ds);
+                
+                //crea una nueva fila con el esquema de la tabla
+                //todo: no funciona??
+                //var nuevaFila = ds.Tables["Pais"].NewRow();
+                var nuevaFila = ds.Tables[0].NewRow();
+                //no especificamos id_pais porque es autogenerado
+                nuevaFila["nom_pais"] = p.nom_pais;
+                nuevaFila["pbi_pais"] = p.pbi_pais;
+
+                ds.Tables[0].Rows.Add(nuevaFila);
+
+                //un poco de magia: automáticamente crea las sentencia INSERT o UPDATE
+                //o DELETE necesarias para actualizar la tabla
+                new SqlCommandBuilder(da);
+
+                da.Update(ds);
+            }
+            return 0;
+        }
+
+        public static int ActualizarPais(Pais p)
+        {
+            using (var con = new SqlConnection(con_str))
+            using (var da = new SqlDataAdapter(
+                //solo traemos el registro que va a ser actualizado; así optimizamos recursos
+                String.Format("SELECT * FROM Pais WHERE id_pais = {0}", p.id_pais), con))
+            {
+                var ds = new DataSet();
+                da.Fill(ds);
+
+                //nos aseguramos que exista el país indicado, si no, retornamos -1 (error)
+                var fila = ds.Tables[0].Rows[0];
+                if (fila == null)
+                    return -1;
+
+                //actualizamos el registro en el DataTable con los valores de nuestro objeto p
+                fila["nom_pais"] = p.nom_pais;
+                fila["pbi_pais"] = p.pbi_pais;
+
+                //la misma magia
+                new SqlCommandBuilder(da);
+                da.Update(ds);
+            }
+            return 0;
+        }
+
+        public static int EliminarPais(int id_pais)
+        {
+            using (var con = new SqlConnection(con_str))
+            using (var da = new SqlDataAdapter(
+                //solo traemos el registro a eliminar
+                String.Format("SELECT * FROM Pais WHERE id_pais = {0}", id_pais), con))
+            {
+                var ds = new DataSet();
+                da.Fill(ds);
+
+                //nos aseguramos que exista el país indicado, si no, retornamos -1 (error)
+                var fila = ds.Tables[0].Rows[0];
+                if (fila == null)
+                    return -1;
+
+                //borramos el registro
+                fila.Delete();
+
+                //la misma magia
+                new SqlCommandBuilder(da);
+                da.Update(ds);
+            }
+            return 0;
         }
     }
 }
