@@ -9,8 +9,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+    <asp:gridview ID="grd" runat="server" AutoGenerateColumns="true" />
     </div>
     </form>
 </body>
 </html>
+
