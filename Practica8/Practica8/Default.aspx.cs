@@ -13,10 +13,12 @@ namespace Practica8
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var ds = Modelo.ObtenerPaises();
-            grd.DataSource = ds;
-            grd.DataBind();
-            
+            //var ds = Modelo.ObtenerPaises();
+            //grd.DataSource = ds;
+            //grd.DataBind();
+
+            dtl.DataSource = new List<Pais> { Modelo.ObtenerPais(4)};
+            dtl.DataBind();
             //var p = ds[7];
             //p.nom_pais="Corea del sur";
             //p.pbi_pais=777;

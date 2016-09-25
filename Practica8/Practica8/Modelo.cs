@@ -146,5 +146,36 @@ namespace Practica8
             }
             return 0;
         }
+
+        public static Pais ObtenerPais(int id_pais)
+        {
+            //si el método no encontró al país indicado entonces este objeto
+            //se queda con su valor nulo
+            Pais p = null;
+            
+            using (var con = new SqlConnection(con_str))
+            using (var da = new SqlDataAdapter(
+                String.Format("SELECT * FROM Pais WHERE id_pais = {0}", id_pais), con))
+            {
+                var ds = new DataSet();
+                da.Fill(ds);
+
+                //si el nro de filas es cero entonces no existe el id_pais indicado
+                //entonces retornamos el objeto nulo
+                if (ds.Tables[0].Rows.Count == 0)
+                    return p;
+                
+                var fila = ds.Tables[0].Rows[0];
+                p = new Pais
+                {
+                    id_pais = fila.Field<int>("id_pais"),
+                    nom_pais = fila.Field<string>("nom_pais"),
+                    pbi_pais = fila.Field<decimal>("pbi_pais")
+                };
+            }
+            return p;
+        }
+
+        /*TODO: Actividad 1: Cree*/
     }
 }
