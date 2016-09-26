@@ -51,7 +51,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Default.aspx" />
+    <Content Include="Exito.aspx" />
     <Content Include="FormPais.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -62,12 +62,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Exito.aspx.cs">
+      <DependentUpon>Exito.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Exito.aspx.designer.cs">
+      <DependentUpon>Exito.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormPais.aspx.cs">
       <DependentUpon>FormPais.aspx</DependentUpon>

@@ -67,7 +67,7 @@ namespace Practica8
             return paises;
         }
 
-        public static int InsertarPais(Pais p)
+        public static int AgregarPais(Pais p)
         {
             using (var con = new SqlConnection(con_str))
             //pequeño truco que no trae ningún dato pero basta para obtener la estructura de la tabla

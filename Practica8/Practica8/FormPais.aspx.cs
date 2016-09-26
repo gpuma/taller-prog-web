@@ -37,6 +37,8 @@ namespace Practica8
 
         private void CargarPaisModoLectura(int id_pais)
         {
+            pnlBusqueda.Visible = false;
+
             //obtenemos el país indicado
             Pais p = Modelo.ObtenerPais(id_pais);
             if (p == null)
@@ -52,6 +54,7 @@ namespace Practica8
             btnAgregarPais.Visible = false;
             btnActualizarPais.Visible = false;
             btnEliminar.Enabled = true;
+            lnkEdicion.Visible = true;
 
             //deshabilitamos los controles
             CambiarEstadoControles(false);
@@ -72,6 +75,10 @@ namespace Practica8
             CambiarEstadoControles(true);
 
             btnActualizarPais.Visible = true;
+            //no puede modificar el ID xq es autogenerado
+            txtIdPais.Enabled = true;
+            //ocultamos el button link de edición
+            lnkEdicion.Visible = false;
         }
 
         //lee los controles de nuestro formulario y nos devuelve un objeto País
@@ -81,7 +88,10 @@ namespace Practica8
             //solo devuelve al objeto, no lo almacena
             return new Pais
             {
-                id_pais = Convert.ToInt32(txtIdPais.Text),
+                //a esto se le llama condicional ternaria. es como un if abreviado. Tiene la sgte sintaxis:
+                //<condicion>?<qué valor retornar cuándo es verdadera>:<qué retornar cuándo es falsa>
+                //aquí decimos que si el textbox está vacío, el valor de id_pais sea cero (útil en la inserción)
+                id_pais = (txtIdPais.Text != "") ? Convert.ToInt32(txtIdPais.Text) : 0,
                 nom_pais = txtNomPais.Text,
                 pbi_pais = Convert.ToDecimal(txtPBI.Text)
             };
@@ -99,22 +109,24 @@ namespace Practica8
         
         private void CargarModoNuevo()
         {
-            throw new NotImplementedException();
+            pnlBusqueda.Visible = false;
+            
+            pnlPais.Visible = true;
+            CambiarEstadoControles(true);
+            //el id es autogenerado
+            txtIdPais.Visible = false;
+            lblIdPais.Visible = false;
+            btnActualizarPais.Visible = false;
+            btnEliminar.Visible = false;
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             int resultado = Modelo.EliminarPais(Convert.ToInt32(txtIdPais.Text));
             if (resultado == 0)
-            {
-                Response.Write("Eliminado correctamente!");
-                //escondemos los controles
-                pnlPais.Visible = false;
-            }
+                Response.Redirect("Exito.aspx");
             else
-            {
                 Response.Write("Ocurrió un error eliminando!");
-            }
         }
 
         protected void btnActualizarPais_Click(object sender, EventArgs e)
@@ -125,12 +137,33 @@ namespace Practica8
             //para verificar el resultado
             int res = Modelo.ActualizarPais(p);
             if (res == 0)
-            {
-                Response.Write("Éxito!");
-                pnlPais.Visible = false;
-            }
+                Response.Redirect("Exito.aspx");
             else
                 Response.Write("Ocurrió un error actualizando el dato");
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            //redirigimos a otro modo del formulario
+            Response.Redirect("~/FormPais.aspx?modo=lectura&id_pais=" + txtBusqueda.Text);
+        }
+
+        protected void btnAgregarPais_Click(object sender, EventArgs e)
+        {
+            //obtenemos un objeto a partir de los controles
+            Pais p = LeerControlesYCrearObjeto();
+
+            //para verificar el resultado
+            int res = Modelo.AgregarPais(p);
+            if (res == 0)
+                Response.Redirect("Exito.aspx");
+            else
+                Response.Write("Ocurrió un error agregando el dato");
+        }
+
+        protected void lnkEdicion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/FormPais.aspx?modo=edicion&id_pais=" + txtIdPais.Text);
         }
     }
 }

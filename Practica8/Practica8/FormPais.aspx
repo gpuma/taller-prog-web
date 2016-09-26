@@ -8,12 +8,23 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <h1>Paises</h1>
+    <h1>Países</h1>
+    <asp:LinkButton ID="lnkEdicion" Visible="false" runat="server" 
+        onclick="lnkEdicion_Click">Editar</asp:LinkButton>
     <%--Panel es un contenedor de controles. Podemos ocultar o mostrar todos los controles
     ----contenidos dentro de el panel--%>
-    <asp:Panel ID="pnlPais" runat="server">
+    <asp:Panel ID="pnlBusqueda" runat="server">
     <div>
-        Id País: <asp:TextBox ID="txtIdPais" runat="server" />
+        <a href="FormPais.aspx?modo=nuevo" id="lnkNuevoPais" runat="server">Agregar nuevo...</a>
+    </div>
+    Buscar país por código: <asp:TextBox  ID="txtBusqueda" runat="server" />
+        <asp:Button ID="btnBuscar" Text="Buscar" runat="server" 
+            onclick="btnBuscar_Click" />
+    </asp:Panel>
+    <asp:Panel ID="pnlPais" Visible="false" runat="server">
+    <div>
+        <asp:Label ID="lblIdPais" Text="Id país" runat="server" />
+        <asp:TextBox ID="txtIdPais" runat="server" />
     </div>
     <div>
         Nombre País: <asp:TextBox ID="txtNomPais" runat="server" />
@@ -22,7 +33,8 @@
         Producto Bruto Interno <asp:TextBox ID="txtPBI" runat="server" />
     </div>
     <div>
-        <asp:Button ID="btnAgregarPais" Text="Agregar País" runat="server" />
+        <asp:Button ID="btnAgregarPais" Text="Agregar País" runat="server" 
+            onclick="btnAgregarPais_Click" />
     </div>
     <div>
         <asp:Button ID="btnActualizarPais" Text="Actualizar País" runat="server" 
