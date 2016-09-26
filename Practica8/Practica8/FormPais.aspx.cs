@@ -81,6 +81,19 @@ namespace Practica8
             lnkEdicion.Visible = false;
         }
 
+        private void CargarModoNuevo()
+        {
+            pnlBusqueda.Visible = false;
+
+            pnlPais.Visible = true;
+            CambiarEstadoControles(true);
+            //el id es autogenerado
+            txtIdPais.Visible = false;
+            lblIdPais.Visible = false;
+            btnActualizarPais.Visible = false;
+            btnEliminar.Visible = false;
+        }
+
         //lee los controles de nuestro formulario y nos devuelve un objeto País
         private Pais LeerControlesYCrearObjeto()
         {
@@ -107,19 +120,6 @@ namespace Practica8
             btnActualizarPais.Enabled = estado;
         }
         
-        private void CargarModoNuevo()
-        {
-            pnlBusqueda.Visible = false;
-            
-            pnlPais.Visible = true;
-            CambiarEstadoControles(true);
-            //el id es autogenerado
-            txtIdPais.Visible = false;
-            lblIdPais.Visible = false;
-            btnActualizarPais.Visible = false;
-            btnEliminar.Visible = false;
-        }
-
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             int resultado = Modelo.EliminarPais(Convert.ToInt32(txtIdPais.Text));
@@ -161,6 +161,7 @@ namespace Practica8
                 Response.Write("Ocurrió un error agregando el dato");
         }
 
+        //redirección al modo edición
         protected void lnkEdicion_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/FormPais.aspx?modo=edicion&id_pais=" + txtIdPais.Text);

@@ -1,0 +1,16 @@
+﻿En esta práctica desarrollará el mantenimiento completo de una Tabla.
+
+Deberá abrir SQL Server Management Studio (ssms.exe) y ejecutar los comandos del script SCRUM.sql
+para restaurar la Base de Datos con la que trabajará en la práctica.
+
+Antes de comenzar las actividades familiarícese con el programa que ya está implementado y lea el
+código para entender cómo funciona.
+
+Visite los archivos en el siguiente orden y realice las actividades:
+
+1. Modelo.cs
+2. FormPais.aspx
+3. FormPais.aspx.cs
+4. Exito.aspx
+
+Buena suerte!

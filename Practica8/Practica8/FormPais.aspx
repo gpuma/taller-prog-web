@@ -8,7 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <h1>Países</h1>
+    <h1>Mantenimiento Tabla País</h1>
     <asp:LinkButton ID="lnkEdicion" Visible="false" runat="server" 
         onclick="lnkEdicion_Click">Editar</asp:LinkButton>
     <%--Panel es un contenedor de controles. Podemos ocultar o mostrar todos los controles

@@ -18,7 +18,7 @@ namespace Practica8
         public decimal pbi_pais { get; set; }
     }
     
-    public class Modelo
+    public static class Modelo
     {
         //cadena de conexión a la Base de Datos SQL Server, dependiendo del entorno a usar debe ser cambiada
         static string con_str = @"Data Source=.\SQLEXPRESS; Database=SCRUM; Integrated Security=True;";
@@ -78,8 +78,6 @@ namespace Practica8
                 da.Fill(ds);
                 
                 //crea una nueva fila con el esquema de la tabla
-                //todo: no funciona??
-                //var nuevaFila = ds.Tables["Pais"].NewRow();
                 var nuevaFila = ds.Tables[0].NewRow();
                 //no especificamos id_pais porque es autogenerado
                 nuevaFila["nom_pais"] = p.nom_pais;
@@ -176,6 +174,22 @@ namespace Practica8
             return p;
         }
 
-        /*TODO: Actividad 1: Cree*/
+        /*TODO: Actividad 1: Cree los mismos métodos CRUD vistos arriba pero para la tabla Persona
+         * Tendrá que crear también la clase Persona*/
+
+        /*TODO: Actividad 2: Modifique el formulario Exito.aspx para que tenga un GridView que cargue
+         * todos los elementos de la tabla Persona. Deberá usar Data Binding con los datos obtenidos
+         * de su método ObtenerPersonas arriba (si es que le puso ese nombre)
+         */
+
+        /*TODO: Actividad 3: Cree un nuevo formulario como FormPais.aspx (ej. FormPersona.aspx)
+         * que me permita realizar el mantenimiento de la tabla Persona. Es decir, su formulario (o formularios)
+         * me deberá permitir:
+         ** Buscar a una Persona por su código
+         ** Editar a una Persona
+         ** Borrar a una Persona
+         ** Agregar a una Persona*/
+
+        /*TODO: Actividad 4: Agregue un enlace que me permite elegir entre el Mantenimiento de Pais y el de Persona*/
     }
 }
