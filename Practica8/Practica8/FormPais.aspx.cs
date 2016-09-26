@@ -76,7 +76,7 @@ namespace Practica8
 
             btnActualizarPais.Visible = true;
             //no puede modificar el ID xq es autogenerado
-            txtIdPais.Enabled = true;
+            txtIdPais.Enabled = false;
             //ocultamos el button link de edición
             lnkEdicion.Visible = false;
         }

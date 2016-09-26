@@ -21,7 +21,9 @@ namespace Practica8
     public static class Modelo
     {
         //cadena de conexión a la Base de Datos SQL Server, dependiendo del entorno a usar debe ser cambiada
+        //si no funciona esta cadena de conexión pruebe la de abajo
         static string con_str = @"Data Source=.\SQLEXPRESS; Database=SCRUM; Integrated Security=True;";
+        //static string con_str = @"Data Source=localhost; Initial Catalog=SCRUM; Integrated Security=True;";
         
         public static List<Pais> ObtenerPaises()
         {
