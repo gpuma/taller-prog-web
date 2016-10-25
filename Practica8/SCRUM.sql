@@ -28,16 +28,17 @@ INSERT INTO Rol VALUES ('Steakholders')
 CREATE TABLE Pais
 (
 	id_pais INT PRIMARY KEY IDENTITY(1,1),
-	nom_pais NVARCHAR(25) NOT NULL
+	nom_pais NVARCHAR(25) NOT NULL,
+	pbi_pais money NOT NULL
 )
 
-INSERT INTO Pais VALUES ('Peru')
-INSERT INTO Pais VALUES ('Guatemala')
-INSERT INTO Pais VALUES ('Costa Rica')
-INSERT INTO Pais VALUES ('Japon')
-INSERT INTO Pais VALUES ('Estados Unidos')
-INSERT INTO Pais VALUES ('Argentina')
-INSERT INTO Pais VALUES ('Tailandia')
+INSERT INTO Pais VALUES ('Peru', 178643)
+INSERT INTO Pais VALUES ('Guatemala', 68142)
+INSERT INTO Pais VALUES ('Costa Rica', 56908)
+INSERT INTO Pais VALUES ('Japon', 4412600)
+INSERT INTO Pais VALUES ('Estados Unidos',18558130)
+INSERT INTO Pais VALUES ('Argentina', 437586)
+INSERT INTO Pais VALUES ('Tailandia', 409724)
 
 CREATE TABLE Persona
 (
