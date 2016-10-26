@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+    <asp:Label ID="lblMensaje" runat="server">Bienvenido al formulario D</asp:Label>
     </div>
     </form>
 </body>

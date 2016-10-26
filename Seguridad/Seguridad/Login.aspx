@@ -12,10 +12,12 @@
         Usuario <input type="text" ID="txtNombreUsuario" runat="server"/>
     </div>
     <div>
-        Contraseña <input type="text" ID="txtContraseña" runat="server"/>
+        Contraseña <input type="password" ID="txtContraseña" runat="server"/>
     </div>
     <div>
-        <input type="submit" ID="txtLogin" value="Log in" runat="server"/>
+        <%--<input type="submit" ID="txtLogin" value="Log in" runat="server"/>--%>
+        <asp:Button ID="txtLogin" Text="Log in" runat="server" 
+            onclick="txtLogin_Click" />
     </div>
     </form>
 </body>

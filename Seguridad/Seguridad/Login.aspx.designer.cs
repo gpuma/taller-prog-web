@@ -37,7 +37,7 @@ namespace Seguridad {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtContraseña;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtContraseña;
         
         /// <summary>
         /// txtLogin control.
@@ -46,6 +46,6 @@ namespace Seguridad {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputSubmit txtLogin;
+        protected global::System.Web.UI.WebControls.Button txtLogin;
     }
 }
