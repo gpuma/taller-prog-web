@@ -63,15 +63,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AJAX.aspx" />
-    <Content Include="confidencial\PanamaPapers.aspx" />
-    <Content Include="confidencial\TopSecret.aspx" />
     <Content Include="documentos\documento-1.txt" />
     <Content Include="documentos\documento-2.txt" />
     <Content Include="documentos\documento-3.txt" />
     <Content Include="documentos\documento-4.txt" />
     <Content Include="documentos\documento-5.txt" />
     <Content Include="Ficheros.aspx" />
-    <Content Include="Login.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -88,20 +85,6 @@
     <Compile Include="AJAX.aspx.designer.cs">
       <DependentUpon>AJAX.aspx</DependentUpon>
     </Compile>
-    <Compile Include="confidencial\PanamaPapers.aspx.cs">
-      <DependentUpon>PanamaPapers.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="confidencial\PanamaPapers.aspx.designer.cs">
-      <DependentUpon>PanamaPapers.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="confidencial\TopSecret.aspx.cs">
-      <DependentUpon>TopSecret.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="confidencial\TopSecret.aspx.designer.cs">
-      <DependentUpon>TopSecret.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Ficheros.aspx.cs">
       <DependentUpon>Ficheros.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -109,15 +92,7 @@
     <Compile Include="Ficheros.aspx.designer.cs">
       <DependentUpon>Ficheros.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Seguridad.cs" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

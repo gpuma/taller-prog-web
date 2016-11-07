@@ -37,7 +37,7 @@
     <p>
         <asp:Label Text="Refresque la página para ver el nuevo ganador!" runat="server" />
 
-        <%-- TODO: Actividad X: modifique el código para que el ganador se actualice 
+        <%-- TODO: Actividad 5: modifique el código para que el ganador se actualice 
              sin refrescar la página, al igual que la hora--%>
     </p>
     <asp:Label ID="lblGanador" runat="server" />

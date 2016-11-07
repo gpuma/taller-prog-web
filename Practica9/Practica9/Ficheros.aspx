@@ -21,7 +21,7 @@
     <asp:Button ID="btnGuardar" Text = "Guardar" runat="server" OnClick="btnGuardar_OnClick" />
     </div>
 
-    <%-- TODO: Actividad X: Utilice AJAX para que se cargue el contenido y la 
+    <%-- TODO: Actividad 6: Utilice AJAX para que se cargue el contenido y la 
     información del archivo seleccionado sin recargar la página 
     (sin generar un postback completo). Tendrá que hacer uso de los controles
     ScriptManager y UpdatePanel--%>
