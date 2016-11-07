@@ -50,6 +50,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="documentos\documento-1.txt" />
+    <Content Include="documentos\documento-2.txt" />
+    <Content Include="documentos\documento-3.txt" />
+    <Content Include="documentos\documento-4.txt" />
+    <Content Include="documentos\documento-5.txt" />
+    <Content Include="Ficheros.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -59,8 +65,16 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ficheros.aspx.cs">
+      <DependentUpon>Ficheros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ficheros.aspx.designer.cs">
+      <DependentUpon>Ficheros.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
