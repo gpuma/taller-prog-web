@@ -15,9 +15,9 @@ namespace PersonajesEjemplo.Controllers
         //Los métodos de acción proveen respuestas que pueden ser usadas por el navegador
         public ActionResult Index()
         {
-            //aquí pondremos la cadena que queremos retornar
-            object name = "Gustavo";
-            return View(name);
+            //ahora retornaremos un objeto propio
+            var modelo = new Models.Personaje() { Nombre = "Gus" };
+            return View(modelo);
         }
 
         public ActionResult About()

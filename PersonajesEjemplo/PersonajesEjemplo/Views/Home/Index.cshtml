@@ -1,11 +1,12 @@
-﻿@*Con esto indicamos que nuestra vista espera una cadena de texto*@
-@model String
+﻿@*Con esto indicamos que nuestra vista espera un objeto de nuestra clase Personaje
+  Recordemos que tenemos que especificar su nombre completo, incluyendo namespaces*@
+@model PersonajesEjemplo.Models.Personaje
 <h2>Personajes:</h2>
 
 <div>
     <ul>
         @*Al usar Model en mayúscula podemos acceder al dato que
           nos envie el modelo *@
-        <li>@Model</li>
+        <li>@Model.Nombre</li>
     </ul>
 </div>
