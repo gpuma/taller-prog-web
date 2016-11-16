@@ -16,8 +16,19 @@ namespace PersonajesEjemplo.Controllers
         public ActionResult Index()
         {
             //ahora retornaremos un objeto propio
-            var modelo = new Models.Personaje() { Nombre = "Gus" };
+            var modelo = new Models.Personaje() { Nombre = "Pepito" };
             return View(modelo);
+        }
+
+        //el argumento NombrePersonaje debe corresponder al nombre de nuestra
+        //caja de texto en nuestra Vista
+        [HttpPost]
+        public ActionResult Create(string NombrePersonaje)
+        {
+            //ahora retornaremos un objeto propio
+            var modelo = new Models.Personaje() { Nombre = NombrePersonaje };
+            
+            return View("Index", modelo);
         }
 
         public ActionResult About()

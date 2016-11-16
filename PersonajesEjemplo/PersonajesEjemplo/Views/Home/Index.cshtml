@@ -3,10 +3,25 @@
 @model PersonajesEjemplo.Models.Personaje
 <h2>Personajes:</h2>
 
-<div>
+@*el primer argumento indica la acción y el segundo indica el controlador donde
+  dicha acción se encuentra*@
+@using (Html.BeginForm("Create","Home"))
+{
+    <div>
+        @*El nombre del control "NombrePersonaje" deberá corresponder
+        al nombre del argumento en nuestro controlador para poder hacer el enlace*@
+        <input name="NombrePersonaje"/>
+
+        <input type="submit" value="Agregar Personaje"/>
+    </div>
+}
+
+ <div>
+    <h2>Personajes activos</h2>
     <ul>
         @*Al usar Model en mayúscula podemos acceder al dato que
-          nos envie el modelo *@
+            nos envie el modelo. También podemos acceder a las propiedades
+            como a cualquier objeto*@
         <li>@Model.Nombre</li>
     </ul>
 </div>
