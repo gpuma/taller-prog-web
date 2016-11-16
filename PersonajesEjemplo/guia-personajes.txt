@@ -1,0 +1,10 @@
+Ejemplo Personajes MVC 3
+------------------------
+
+1. Instalamos la actualización de MVC 3 para VS 2010:
+https://www.microsoft.com/en-us/download/confirmation.aspx?id=1491
+
+2. En VS -> New Project -> ASP.NET MVC 3 Web Application
+   Veremos que se nos crea toda una estructura para nuestro proyecto
+   
+3. Modificamos el archivo Views->Home->Index.cshtml
