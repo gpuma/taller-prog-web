@@ -24,7 +24,9 @@ namespace Practica9
 
             lstArchivos.DataSource = nombresArchivos;
             lstArchivos.DataBind();
-            //TODO: Actividad X: muestre el espacio libre en el disco C
+            
+            //TODO: Actividad 1: muestre el espacio libre en el disco C
+            //TIP: Revise las diapositivas o la documentación de la clase DriveInfo
 
             //TODO: Punto extra: muestre solo el nombre de los archivos, no su ruta completa
             //ejemplo: "C:/proyectos/Practica9/documentos/documento-1.txt" -> "documento-1.txt"
@@ -34,51 +36,27 @@ namespace Practica9
 
         public void lstArchivos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //TODO: Actividad X: cuando el usuario seleccione un archivo en el Listbox lstArchivos
+            //TODO: Actividad 2: cuando el usuario seleccione un archivo en el Listbox lstArchivos
             //muestre su contenido en txtContenido. Se le recomienda crear un método
             //que tome la ruta de un archivo y devuelva una cadena con su contenido.
-            //TIP: Haga uso de la clases StreamReader para leer su archivo
-            //TIP: Haga uso de las sentencias using para la gestión de recursos automática cuando
-            //maneja archivos
+            //TIP: Haga uso de la clases StreamReader. Revise los ejemplos de la documentación:
+            //https://msdn.microsoft.com/es-es/library/system.io.streamreader(v=vs.110).aspx
 
-            //TODO: Actividad X: Muestre los siguientes datos del archivo seleccionado: fecha de creación,
+
+            //TODO: Actividad 3: Muestre los siguientes datos del archivo seleccionado: fecha de creación,
             //fecha de modificación y fecha de acceso en el control txtInfoArchivo
             //TIP: Revise las diapositivas sobre la clase File
 
-            //borrar:
-            txtInfoArchivo.Text = File.GetCreationTime(lstArchivos.SelectedItem.Text).ToLongTimeString() + "hola";
-
-            //borrar:
-            txtContenido.Text = ObtenerTexto(lstArchivos.SelectedItem.Text);
         }
 
         public void btnGuardar_OnClick(object sender, EventArgs e)
         {
-            //TODO: Actividad X: Permita que el usuario pueda editar el texto del archivo seleccionado
+            //TODO: Actividad 4: Permita que el usuario pueda editar el texto del archivo seleccionado
             //y que se guarden los cambios cuando haga click al botón guardar
             //TIP: se le recomienda crear un método que actualice el texto de un archivo existente
-            //TIP: Utilice la clase StreamWriter
+            //TIP: Utilice la clase StreamWriter. Revise los ejemplos de la documentación:
+            //https://msdn.microsoft.com/es-es/library/system.io.streamwriter(v=vs.110).aspx
 
-            //borrar:
-            ActualizarTexto(lstArchivos.SelectedItem.Text, txtContenido.Text);
-        }
-        
-        //borrar: 
-        void ActualizarTexto(string ruta, string nuevoTexto)
-        {
-            using (var writer = new StreamWriter(ruta, false))
-            {
-                writer.Write(nuevoTexto);
-            }
-        }
-
-        //borrar:
-        string ObtenerTexto(string ruta)
-        {
-            using (var reader = new StreamReader(ruta))
-            {
-                return reader.ReadToEnd();
-            }
         }
     }
 }

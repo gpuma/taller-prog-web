@@ -1,0 +1,14 @@
+﻿En esta breve práctica se familiarizará con el manejo de ficheros y AJAX.
+En la primera parte gestionará los archivos de una carpeta y en la segunda 
+se encargará de manejar los conceptos de actualizaciones parciales.
+
+Lea el código, los comentarios y entienda.
+
+Visite los archivos en el siguiente orden y realice las actividades:
+
+1. Ficheros.aspx.cs
+2. AJAX.aspx
+3. AJAX.aspx.cs
+4. Ficheros.aspx
+
+Buena suerte!

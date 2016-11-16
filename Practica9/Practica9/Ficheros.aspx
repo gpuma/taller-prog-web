@@ -7,24 +7,24 @@
     <title></title>
 </head>
 <body>
-    <h1>Ficheros</h1>
     <form id="form1" runat="server">
-    <p>
-        Seleccione un archivo para verlo:
-    </p>
-        <asp:ListBox ID="lstArchivos" runat="server" AutoPostBack="true"
-            OnSelectedIndexChanged="lstArchivos_SelectedIndexChanged"/>
-        <asp:TextBox ID="txtInfoArchivo" ReadOnly="true" runat="server" TextMode="MultiLine" />
-    <p>
-        Contenido:
-    </p>
-    <div>
+    <h1>Ficheros</h1>
+    <p>Seleccione un archivo para verlo:</p>
+    <asp:ListBox ID="lstArchivos" runat="server" AutoPostBack="true"
+        OnSelectedIndexChanged="lstArchivos_SelectedIndexChanged"/>
+    Info: 
+    <asp:TextBox ID="txtInfoArchivo" ReadOnly="true" runat="server" TextMode="MultiLine" />
+    <p>Contenido:</p>
     <%--Recuerde que nuestro Textbox es multilínea para poder mostrar el contenido de un archivo--%>
-        <asp:TextBox ID="txtContenido" runat="server" TextMode="MultiLine"/>
-    </div>
+    <asp:TextBox ID="txtContenido" runat="server" TextMode="MultiLine"/>
     <div>
-        <asp:Button ID="btnGuardar" Text = "Guardar" runat="server" OnClick="btnGuardar_OnClick" />
+    <asp:Button ID="btnGuardar" Text = "Guardar" runat="server" OnClick="btnGuardar_OnClick" />
     </div>
+
+    <%-- TODO: Actividad 6: Utilice AJAX para que se cargue el contenido y la 
+    información del archivo seleccionado sin recargar la página 
+    (sin generar un postback completo). Tendrá que hacer uso de los controles
+    ScriptManager y UpdatePanel--%>
     </form>
 </body>
 </html>
