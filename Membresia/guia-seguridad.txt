@@ -1,0 +1,6 @@
+//creando nuestra base de datos
+Clic derecho a la carpeta App_Data (si no existe crearla) -> Add new item -> Data -> SQL Server Database
+
+//nuestra base de datos requiere un conjunto específco de tablas para funcionar con la seguridad de ASP.NET
+//para añadirle dichas tablas utilizamos el programa aspnet_regsql.exe. Este programa se encuentra en:
+//C:\Windows\Microsoft.NET\Framework\v4.0.30319\aspnet_regsql
