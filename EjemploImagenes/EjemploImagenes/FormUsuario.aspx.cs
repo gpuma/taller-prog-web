@@ -11,7 +11,44 @@ namespace EjemploImagenes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //if (Request.Url.AbsolutePath == "/FormUsuario.aspx")
+            //    Response.Redirect("~/FormUsuario.aspx?modo=nuevo");
+
+            string modo = Request.Params["modo"];
+            string nombre = null;
             
+            if (Request.Params["nombre"] != null)
+                nombre = Request.Params["nombre"];
+
+            switch (modo)
+            {
+                case "nuevo":
+                    CargarModoNuevo();
+                    break;
+                case "lectura":
+                    CargarModoLectura(nombre);
+                    break;
+            }
+        }
+
+        private void CargarModoNuevo()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void CargarModoLectura(string nombre)
+        {
+            var u = Modelo.ObtenerUsuario(nombre);
+            if (u == null)
+            {
+                Response.Write("no existe");
+                return;
+            }
+
+            txtNombre.Text = u.Nombre;
+            txtApellido.Text = u.Apellido;
+            //guardamos rutas relativas en la BD
+            imgUsuario.Src = u.URLImagen;
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)

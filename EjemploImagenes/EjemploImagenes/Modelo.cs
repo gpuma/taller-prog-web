@@ -33,5 +33,30 @@ namespace EjemploImagenes
             }
             return 0;
         }
+
+        public static Usuario ObtenerUsuario(string nombre)
+        {
+            Usuario u = null;
+
+            using (var con = new SqlConnection(con_str))
+            using (var da = new SqlDataAdapter(
+                String.Format("SELECT * FROM Usuario WHERE nombre = '{0}'", nombre), con))
+            {
+                var ds = new DataSet();
+                da.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count == 0)
+                    return u;
+
+                var fila = ds.Tables[0].Rows[0];
+                u = new Usuario
+                {
+                    Nombre = fila.Field<string>("Nombre"),
+                    Apellido = fila.Field<string>("Apellido"),
+                    URLImagen = fila.Field<string>("URLImagen")
+                };
+            }
+            return u;
+        }
     }
 }

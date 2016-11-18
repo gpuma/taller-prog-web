@@ -19,7 +19,12 @@
          onchange="document.getElementById('imgPreview').src = window.URL.createObjectURL(this.files[0])" />
     </div>
     <div>
+        <%--Esta es para cuando se sube la imagen--%>
         <img id="imgPreview" src="#" alt="Tu imagen"/>
+    </div>
+    <div>
+        <%--Esta es para cuando se muestra la imagen ya guardada en el servidor--%>
+        <img id="imgUsuario" runat="server"/>
     </div>
     <div>
         <asp:Button ID="btnGuardar" Text="Guardar" OnClick="btnGuardar_Click" runat="server" />

@@ -49,6 +49,15 @@ namespace EjemploImagenes {
         protected global::System.Web.UI.HtmlControls.HtmlInputFile imgEntrada;
         
         /// <summary>
+        /// imgUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgUsuario;
+        
+        /// <summary>
         /// btnGuardar control.
         /// </summary>
         /// <remarks>
