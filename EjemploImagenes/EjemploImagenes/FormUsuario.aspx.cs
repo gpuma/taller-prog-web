@@ -16,12 +16,23 @@ namespace EjemploImagenes
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            var resultado = Modelo.AgregarUsuario(new Usuario()
+
+
+            var nuevoUsuario = new Usuario()
             {
                 Nombre = txtNombre.Text,
                 Apellido = txtApellido.Text,
-                //URLImagen = txtImagenURL.Text
-            });
+                //guardaremos la imagen con el nombre de la persona, en este caso supondremos
+                //que su nombre es único, más la extensión correspondiente
+                URLImagen = "~/imagenes/" + txtNombre.Text + System.IO.Path.GetExtension(imgEntrada.Value)
+            };
+            
+            //PostedFile nos da acceso a la imagen que ha sido subida
+            //guardamos dicha imagen en el servidor, para ello requerimos una ruta absoluta
+            //por usamos MapPath
+            imgEntrada.PostedFile.SaveAs(MapPath(nuevoUsuario.URLImagen));
+
+            var resultado = Modelo.AgregarUsuario(nuevoUsuario);
         }
     }
 }
