@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RRHH.aspx.cs" Inherits="EjemploSeguridadPropia.RRHH" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Error.aspx.cs" Inherits="EjemploSeguridadPropia.Vistas.Error" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -9,7 +9,8 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+    <h1>No tiene permiso para acceder a este formulario</h1>
+    <a href="Home.aspx">Iniciar sesión...</a>
     </div>
     </form>
 </body>

@@ -42,14 +42,14 @@ namespace EjemploSeguridadPropia
 
             //las reglas para nuestro rol Usuario
             ReglasDeAcceso.Add(TipoUsuario.Usuario, new Regla[]{
-                new Regla() { Recurso = "/Contabilidad.aspx", Acceso = Permiso.LecturaYEscritura},
-                new Regla() { Recurso = "/RRHH.aspx", Acceso = Permiso.LecturaYEscritura},
+                new Regla() { Recurso = "/Vistas/Contabilidad.aspx", Acceso = Permiso.LecturaYEscritura},
+                new Regla() { Recurso = "/Vistas/RRHH.aspx", Acceso = Permiso.LecturaYEscritura},
             });
             
             //el invitado tiene los mismo que Usuario pero solo lectura
             ReglasDeAcceso.Add(TipoUsuario.Invitado, new Regla[]{
-                new Regla() { Recurso = "/Contabilidad.aspx", Acceso = Permiso.Lectura},
-                new Regla() { Recurso = "/RRHH.aspx", Acceso = Permiso.Lectura},
+                new Regla() { Recurso = "/Vistas/Contabilidad.aspx", Acceso = Permiso.Lectura},
+                new Regla() { Recurso = "/Vistas/RRHH.aspx", Acceso = Permiso.Lectura},
             });
         }
 

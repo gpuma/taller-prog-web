@@ -11,7 +11,12 @@ namespace EjemploSeguridadPropia
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var permiso = Seguridad.ObtenerPermisosDisponibles(Request.Path, this.ObtenerUsuarioSesion());
 
+            if (permiso == Permiso.Ninguno)
+                Response.Redirect("~/Vistas/Error.aspx");
+            else
+                Response.Write("Ud. tiene permiso de: " + permiso.ToString());
         }
     }
 }

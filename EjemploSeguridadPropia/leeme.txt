@@ -1,0 +1,17 @@
+EjemploSeguridadPropia
+----------------------
+
+El siguiente proyecto implementa seguridad desde cero; no hace uso de los roles y membresía de ASP.NET
+Tampoco maneja una BD pero hace una simulación que se puede ver en Modelos/Modelo.cs
+Existen tres usuarios: admin, juan y pedro. Asímismo también hay tres tipos de usuario: administrador,
+usuario e invitado. Los formularios pueden tener también derechos de lectura y escritura independientes
+
+En términos más específicos:
+- administrador tiene acceso a TODO
+- usuario tiene acceso a los formularios de Contabilidad y RRHH, con derechos de lectura y escritura
+- invitiado tiene acceso a los formularios de Contabilidad y RRHH, con derechos de SOLO LECTURA
+
+Los detalles de los permisos se pueden ver en el archivo Seguridad.cs
+
+Aunque los formularios no tiene datos qué mostrar o modificar, se indican los derechos que existen;
+es decir, la funcionalidad está lista
