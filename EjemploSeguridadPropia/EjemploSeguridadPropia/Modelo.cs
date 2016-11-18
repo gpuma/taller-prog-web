@@ -17,15 +17,5 @@ namespace EjemploSeguridadPropia
                 new Usuario {NombreUsuario = "pedro", Contraseña = "pedro", Tipo=TipoUsuario.Invitado}
             };
         }
-
-        public static Usuario ValidarUsuario(string nombre, string contraseña)
-        {
-            //El método FirstOrDefault obtiene el primer objeto de una lista o el valor por defecto
-            //si la lista está vacía. Hacemos esto porque el resultado de la siguiente consulta
-            //es una lista, como solo debería haber un usuario con el nombre específico
-            return (from u in ObtenerUsuarios()
-                    where u.NombreUsuario == nombre && u.Contraseña == contraseña
-                    select u).FirstOrDefault();
-        }
     }
 }

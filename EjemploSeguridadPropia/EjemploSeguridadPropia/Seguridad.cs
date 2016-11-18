@@ -27,27 +27,38 @@ namespace EjemploSeguridadPropia
 
         //un constructor en una clase estática es ejecutado la primera
         //vez que dicha clase es usada, ya que no se puede instanciar
-        public Seguridad()
+        static Seguridad()
         {
-            PrepararReglas();
+            CargarReglas();
         }
 
-        private static void PrepararReglas()
+        //aquí pondríamos cualquier regla nueva que se le añada al sistema
+        private static void CargarReglas()
         {
             //nuestro atributo no estaba instanciado
             ReglasDeAcceso = new Dictionary<TipoUsuario, Regla[]>();
 
             //las reglas para nuestro rol Usuario
             ReglasDeAcceso.Add(TipoUsuario.Usuario, new Regla[]{
-                new Regla() { Recurso = "Contabilidad.aspx", Acceso = Permiso.Todo},
-                new Regla() { Recurso = "RRHH.aspx", Acceso = Permiso.Todo},
+                new Regla() { Recurso = "/Contabilidad.aspx", Acceso = Permiso.Todo},
+                new Regla() { Recurso = "/RRHH.aspx", Acceso = Permiso.Todo},
             });
             
             //el invitado tiene los mismo que Usuario pero solo lectura
             ReglasDeAcceso.Add(TipoUsuario.Invitado, new Regla[]{
-                new Regla() { Recurso = "Contabilidad.aspx", Acceso = Permiso.Lectura},
-                new Regla() { Recurso = "RRHH.aspx", Acceso = Permiso.Lectura},
+                new Regla() { Recurso = "/Contabilidad.aspx", Acceso = Permiso.Lectura},
+                new Regla() { Recurso = "/RRHH.aspx", Acceso = Permiso.Lectura},
             });
+        }
+
+        public static Usuario Autenticar(string nombre, string contraseña)
+        {
+            //El método FirstOrDefault obtiene el primer objeto de una lista o el valor por defecto
+            //si la lista está vacía. Hacemos esto porque el resultado de la siguiente consulta
+            //es una lista, como solo debería haber un usuario con el nombre específico
+            return (from u in Modelo.ObtenerUsuarios()
+                    where u.NombreUsuario == nombre && u.Contraseña == contraseña
+                    select u).FirstOrDefault();
         }
 
         //determina si un usuario específico tiene permiso al recurso solicitado
