@@ -15,9 +15,11 @@ namespace EjemploSeguridadPropia
 
     public enum Permiso
     {
+        //el primer elemento es el valor por defecto en un enum
+        Ninguno,
         Lectura,
         Escritura,
-        Todo
+        LecturaYEscritura
     }
 
     public static class Seguridad
@@ -40,8 +42,8 @@ namespace EjemploSeguridadPropia
 
             //las reglas para nuestro rol Usuario
             ReglasDeAcceso.Add(TipoUsuario.Usuario, new Regla[]{
-                new Regla() { Recurso = "/Contabilidad.aspx", Acceso = Permiso.Todo},
-                new Regla() { Recurso = "/RRHH.aspx", Acceso = Permiso.Todo},
+                new Regla() { Recurso = "/Contabilidad.aspx", Acceso = Permiso.LecturaYEscritura},
+                new Regla() { Recurso = "/RRHH.aspx", Acceso = Permiso.LecturaYEscritura},
             });
             
             //el invitado tiene los mismo que Usuario pero solo lectura
@@ -81,6 +83,29 @@ namespace EjemploSeguridadPropia
                                select r).Any();
 
             return tieneAcceso;
+        }
+
+        //similar al de arriba. devuelve los permisos disponibles para un recurso específico, si los hay
+        //método creado principalmente para pruebas, el de arriba es el que debería usarse
+        public static Permiso ObtenerPermisosDisponibles(string recurso, Usuario usuario)
+        {
+            //podemos añadir un check en el que le damos acceso al administrador a TODO (usar con precaución)
+            if (usuario.Tipo == TipoUsuario.Administrador)
+                return Permiso.LecturaYEscritura;
+
+            //primero validamos que exista el tipo de usuario solicitado
+            if (!ReglasDeAcceso.ContainsKey(usuario.Tipo))
+                return Permiso.Ninguno;
+
+            //luego accedemos a los detalles
+            var reglasActuales = ReglasDeAcceso[usuario.Tipo];
+
+            //el valor por defecto sería Ninguno
+            var permiso = (from r in reglasActuales
+                           where r.Recurso == recurso
+                           select r.Acceso).FirstOrDefault();
+
+            return permiso;
         }
     }
 }

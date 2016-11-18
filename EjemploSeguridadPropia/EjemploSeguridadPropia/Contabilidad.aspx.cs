@@ -12,10 +12,11 @@ namespace EjemploSeguridadPropia
         protected void Page_Load(object sender, EventArgs e)
         {
             //Request.Url nos da una URL en el formato /Contabilidad.aspx, para este caso
-            var resultado = Seguridad.Autorizar(Request.Url.ToString(), this.ObtenerUsuarioSesion(), Permiso.Todo);
+            //var resultado = Seguridad.Autorizar(Request.Url.ToString(), this.ObtenerUsuarioSesion(), Permiso.LecturaYEscritura);
 
-            if(resultado)
-                Response.Write("Ud. tiene permiso para todo");
+            var permiso = Seguridad.ObtenerPermisosDisponibles(Request.Path, this.ObtenerUsuarioSesion());
+
+            Response.Write("Ud. tiene permiso de: " + permiso.ToString());
         }
     }
 }

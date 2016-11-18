@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace EjemploSeguridadPropia
+{
+    public partial class Maestra : System.Web.UI.MasterPage
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            PrepararControles();
+        }
+
+        private void PrepararControles()
+        {
+            var user = Session[Util.NomVariableCredenciales] as Usuario;
+            if (user == null)
+            {
+                //login
+                pnlLogin.Visible = true;
+                btnLogout.Visible = false;
+            }
+            else
+            {
+                //logout
+                pnlLogin.Visible = false;
+                btnLogout.Visible = true;
+            }
+        }
+
+        protected void txtLogin_Click(object sender, EventArgs e)
+        {
+            var usuario = Seguridad.Autenticar(txtNombreUsuario.Value, txtContraseña.Value);
+            if (usuario == null)
+            {
+                Response.Write("Error iniciando sesión");
+                return;
+            }
+            //con esto podremos usar al objeto desde todos los formularios
+            Session[Util.NomVariableCredenciales] = usuario;
+            Response.Redirect("~/Contabilidad.aspx");
+        }
+
+        protected void btnLogout_Clicked(object sender, EventArgs e)
+        {
+            Logout();
+        }
+
+        private void Logout()
+        {
+            //setear la variable de sesión nula es suficiente para "eliminar" las credenciales
+            Session[Util.NomVariableCredenciales] = null;
+        }
+    }
+}
