@@ -11,10 +11,10 @@ namespace EjemploImagenes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Request.Url.AbsolutePath == "/FormUsuario.aspx")
-            //    Response.Redirect("~/FormUsuario.aspx?modo=nuevo");
-
             string modo = Request.Params["modo"];
+            //si no hay modo por defecto cargamos modo NUEVO
+            if (modo == null)
+                Response.Redirect("~/FormUsuario.aspx?modo=nuevo");
             string nombre = null;
             
             if (Request.Params["nombre"] != null)
@@ -33,11 +33,24 @@ namespace EjemploImagenes
 
         private void CargarModoNuevo()
         {
-            throw new NotImplementedException();
+            txtNombre.Enabled = true;
+            txtApellido.Enabled = true;
+            imgEntrada.Visible = true;
+            imgPreview.Visible = true;
+            imgUsuario.Visible = false;
+            lnkNuevo.Visible = false;
         }
 
         private void CargarModoLectura(string nombre)
         {
+            //estética
+            txtNombre.Enabled = false;
+            txtApellido.Enabled = false;
+            imgEntrada.Visible = false;
+            imgPreview.Visible = false;
+            btnGuardar.Visible = false;
+            lnkNuevo.Visible = true;
+
             var u = Modelo.ObtenerUsuario(nombre);
             if (u == null)
             {
@@ -53,8 +66,6 @@ namespace EjemploImagenes
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-
-
             var nuevoUsuario = new Usuario()
             {
                 Nombre = txtNombre.Text,
@@ -70,6 +81,11 @@ namespace EjemploImagenes
             imgEntrada.PostedFile.SaveAs(MapPath(nuevoUsuario.URLImagen));
 
             var resultado = Modelo.AgregarUsuario(nuevoUsuario);
+
+            if (resultado == 0)
+            {
+                Response.Redirect("~/FormUsuario.aspx?modo=lectura&nombre=" + nuevoUsuario.Nombre);
+            }
         }
     }
 }

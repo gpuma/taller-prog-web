@@ -8,6 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+    <a id="lnkNuevo" href="~/FormUsuario.aspx?modo=nuevo" runat="server">Nuevo...</a>
     <div>
         Nombre <asp:TextBox ID="txtNombre" runat="server" />
     </div>
@@ -20,11 +21,11 @@
     </div>
     <div>
         <%--Esta es para cuando se sube la imagen--%>
-        <img id="imgPreview" src="#" alt="Tu imagen"/>
+        <img id="imgPreview" width="200" height="200" src="#" alt="Tu imagen" runat="server"/>
     </div>
     <div>
         <%--Esta es para cuando se muestra la imagen ya guardada en el servidor--%>
-        <img id="imgUsuario" runat="server"/>
+        <img id="imgUsuario" width="200" height="200" runat="server"/>
     </div>
     <div>
         <asp:Button ID="btnGuardar" Text="Guardar" OnClick="btnGuardar_Click" runat="server" />
