@@ -89,6 +89,9 @@ namespace EjemploSeguridadPropia
         //método creado principalmente para pruebas, el de arriba es el que debería usarse
         public static Permiso ObtenerPermisosDisponibles(string recurso, Usuario usuario)
         {
+            if (usuario == null)
+                return Permiso.Ninguno;
+
             //podemos añadir un check en el que le damos acceso al administrador a TODO (usar con precaución)
             if (usuario.Tipo == TipoUsuario.Administrador)
                 return Permiso.LecturaYEscritura;

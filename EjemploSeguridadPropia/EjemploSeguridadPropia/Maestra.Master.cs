@@ -53,6 +53,10 @@ namespace EjemploSeguridadPropia
         {
             //setear la variable de sesión nula es suficiente para "eliminar" las credenciales
             Session[Util.NomVariableCredenciales] = null;
+
+            //por razones del ciclo de vida de la página con este pequeño truco forzamos una
+            //recarga de la página DESPUÉS de que hemos eliminado las credenciales, que es lo que queremos
+            Response.Redirect(Page.Request.FilePath);
         }
     }
 }
