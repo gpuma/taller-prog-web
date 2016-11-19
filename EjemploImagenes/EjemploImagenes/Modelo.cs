@@ -9,7 +9,8 @@ namespace EjemploImagenes
 {
     public static class Modelo
     {
-        const string con_str = @"Data Source=.\SQLEXPRESS;AttachDbFilename=D:\taller-prog-web\EjemploImagenes\EjemploImagenes\App_Data\UsuariosBD.mdf;Integrated Security=True;User Instance=True";
+        //hay que modificar esto según el equipo
+        const string con_str = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=UsuarioBD;Integrated Security=True";
         
         public static int AgregarUsuario(Usuario u)
         {

@@ -1,0 +1,11 @@
+El siguiente proyecto muestra cómo guardar la imagen de un usuario; usualmente
+en nuestros sistemas nos gustaría darle la opción al usuario de subir su foto.
+
+En vez de guardar imágenes en la BD de datos, simplemente las guardamos como un archivo normal
+en el servidor, en la carpeta imagenes/, lo cual es el procedimiento recomendado
+
+Como el proyecto hace uso de una BD, hay que realizar unos pasos antes de ejecutarlo:
+
+1. Ejecutar el script de creación localizado en App_Data/script.sql en SQL Server Management Studio
+2. Luego modificar la cadena de conexión, localizada en Modelo.cs, para que se conecte a nuestra BD
+3. Listo
