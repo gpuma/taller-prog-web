@@ -17,15 +17,11 @@ namespace EjemploMembresia
 
         protected void ctlLogin_Authenticate(object sender, AuthenticateEventArgs e)
         {
-            //así autenticamos
-            //todo: explicar remembermeset
             if (Membership.ValidateUser(ctlLogin.UserName, ctlLogin.Password))
             {
+                //RedirectFromLoginPage redirige al usuario al recurso que trató de acceder
+                //RememberMeSet indica si el usuario chequeó la opción de "Recordar mis credenciales"
                 FormsAuthentication.RedirectFromLoginPage(ctlLogin.UserName, ctlLogin.RememberMeSet);
-            }
-            else
-            {
-                Response.Write("error");
             }
         }
     }

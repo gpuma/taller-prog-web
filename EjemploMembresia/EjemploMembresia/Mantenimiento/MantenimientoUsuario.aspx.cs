@@ -25,18 +25,18 @@ namespace EjemploMembresia.Mantenimiento
 
         private void CrearUsuario()
         {
-            var nuevoUsuario= new Usuario()
+            var nuevoUsuario = new Usuario()
             {
-                dni=txtDNI.Text,
-                nombres=txtNombres.Text,
-                apellidos=txtApellidos.Text,
-                telefono=txtTelefono.Text,
-                
-                nombre_usuario=txtNombreUsuario.Text,
-                contraseña=txtContraseña.Text,
-                rol=drpRol.SelectedValue
+                dni = txtDNI.Text,
+                nombres = txtNombres.Text,
+                apellidos = txtApellidos.Text,
+                telefono = txtTelefono.Text,
+
+                nombre_usuario = txtNombreUsuario.Text,
+                contraseña = txtContraseña.Text,
+                rol = drpRol.SelectedValue
             };
-            if(Modelo.CrearNuevoUsuario(nuevoUsuario)==0)
+            if (Modelo.CrearNuevoUsuario(nuevoUsuario) == 0)
             {
                 Response.Write("éxito");
             }
