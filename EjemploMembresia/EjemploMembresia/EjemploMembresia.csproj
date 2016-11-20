@@ -50,7 +50,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Mantenimiento\MantenimientoUsuario.aspx" />
     <Content Include="Modelos\script-creacion-bd.sql" />
+    <Content Include="Roles\MantenimientoRoles.aspx" />
+    <Content Include="Vistas\Inicio.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -60,8 +63,30 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mantenimiento\MantenimientoUsuario.aspx.cs">
+      <DependentUpon>MantenimientoUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\MantenimientoUsuario.aspx.designer.cs">
+      <DependentUpon>MantenimientoUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\Modelo.cs" />
+    <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles\MantenimientoRoles.aspx.cs">
+      <DependentUpon>MantenimientoRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\MantenimientoRoles.aspx.designer.cs">
+      <DependentUpon>MantenimientoRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
