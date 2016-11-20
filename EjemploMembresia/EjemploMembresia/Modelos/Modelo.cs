@@ -19,7 +19,6 @@ namespace EjemploMembresia
         //es decir, debería llamarse una sola vez
         static Modelo()
         {
-            Membership.DeleteUser("gus");
             CargarRoles();
         }
         
