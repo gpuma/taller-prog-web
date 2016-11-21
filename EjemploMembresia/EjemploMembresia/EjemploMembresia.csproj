@@ -54,7 +54,8 @@
     <Content Include="Contabilidad\Kardex.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="Mantenimiento\MantenimientoUsuario.aspx" />
+    <Content Include="CreacionUsuario.aspx" />
+    <Content Include="Mantenimiento\VerUsuarios.aspx" />
     <Content Include="Modelos\script-creacion-bd.sql" />
     <Content Include="Roles\MantenimientoRoles.aspx" />
     <Content Include="Web.config" />
@@ -101,12 +102,19 @@
     <Compile Include="Maestra.Master.designer.cs">
       <DependentUpon>Maestra.Master</DependentUpon>
     </Compile>
-    <Compile Include="Mantenimiento\MantenimientoUsuario.aspx.cs">
-      <DependentUpon>MantenimientoUsuario.aspx</DependentUpon>
+    <Compile Include="CreacionUsuario.aspx.cs">
+      <DependentUpon>CreacionUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Mantenimiento\MantenimientoUsuario.aspx.designer.cs">
-      <DependentUpon>MantenimientoUsuario.aspx</DependentUpon>
+    <Compile Include="CreacionUsuario.aspx.designer.cs">
+      <DependentUpon>CreacionUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\VerUsuarios.aspx.cs">
+      <DependentUpon>VerUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\VerUsuarios.aspx.designer.cs">
+      <DependentUpon>VerUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Modelo.cs" />
     <Compile Include="Modelos\Usuario.cs" />

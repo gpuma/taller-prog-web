@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
     <!--Como buena práctica el nodo raiz del sitio debe poder ser accedido por todos-->
-    <siteMapNode url="~/Inicio.aspx" title="Inicio"  description="" roles="*">
-      <siteMapNode title="Mantenimiento"  description="" roles="administrador" >
-        <siteMapNode url="~/Mantenimiento/MantenimientoUsuario.aspx" title="Usuario"  description="" />
+    <siteMapNode url="~/Inicio.aspx" title="Inicio"  roles="*">
+      <!--"roles" especifica a qué roles se les muestra el link en el menú del sitio-->
+      <siteMapNode url="~/CreacionUsuario.aspx" title="Crear usuario" roles="*"/>
+      <siteMapNode title="Mantenimiento" roles="*" >
+        <siteMapNode url="~/Mantenimiento/VerUsuarios.aspx" title="Ver usuario" roles="administrador"/>
       </siteMapNode>
       <siteMapNode title="Contabilidad"  description="" roles="administrador, usuario">
         <siteMapNode url="~/Contabilidad/Kardex.aspx" title="Kardex"  description="" />

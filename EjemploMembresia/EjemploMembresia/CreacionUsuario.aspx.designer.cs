@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EjemploMembresia.Mantenimiento {
+namespace EjemploMembresia {
     
     
-    public partial class MantenimientoUsuario {
+    public partial class CreacionUsuario {
         
         /// <summary>
         /// txtDNI control.

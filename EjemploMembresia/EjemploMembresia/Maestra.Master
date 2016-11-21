@@ -11,6 +11,8 @@
 <body>
     <form id="form1" runat="server">
     <div>
+        <asp:Button ID="btnLogout" Text="Cerrar sesión" Visible="false"  runat="server" 
+            onclick="btnLogout_Click"/>
         <asp:TreeView ID="TreeView1" Runat="Server" DataSourceID="SiteMapDataSource1">
         </asp:TreeView>
         

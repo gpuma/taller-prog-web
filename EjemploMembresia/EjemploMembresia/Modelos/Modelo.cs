@@ -13,12 +13,13 @@ namespace EjemploMembresia
         public static string[] nombresRoles = { "administrador", "usuario", "invitado" };
         
         //así podemos leer la cadena de conexión que está especificada en Web.config
-        public static string con_str = System.Configuration.ConfigurationManager.ConnectionStrings["CadenaConexionEjemploMembresia"].ConnectionString; 
+        public static string con_str = null;
         
         //el constructor en una clase estática solo se llama la primera vez que se usa la clase,
         //es decir, debería llamarse una sola vez
         static Modelo()
         {
+            con_str = System.Configuration.ConfigurationManager.ConnectionStrings["CadenaConexionEjemploMembresia"].ConnectionString; 
             CargarRoles();
         }
         

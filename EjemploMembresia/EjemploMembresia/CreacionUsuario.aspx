@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Maestra.Master" AutoEventWireup="true" CodeBehind="MantenimientoUsuario.aspx.cs" Inherits="EjemploMembresia.Mantenimiento.MantenimientoUsuario" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Maestra.Master" AutoEventWireup="true" CodeBehind="CreacionUsuario.aspx.cs" Inherits="EjemploMembresia.CreacionUsuario" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 <title>Mantenimiento Usuario</title>
 </asp:Content>
