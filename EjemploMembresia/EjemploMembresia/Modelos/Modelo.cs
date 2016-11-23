@@ -95,5 +95,39 @@ namespace EjemploMembresia
                 return -1;
             }
         }
+
+        public static List<Usuario> ObtenerUsuarios()
+        {
+            List<Usuario> usus = null;
+
+            using (var con = new SqlConnection(con_str))
+            // esta consulta es bastante ineficiente; muchos joins
+            using (var da = new SqlDataAdapter(
+                @"select u.dni, u.nombres, u.apellidos, u.telefono, u.id_usuario_asp,
+                    au.UserName as nombre_usuario, r.RoleName as rol from Usuarios u
+                    inner join aspnet_UsersInRoles uir
+                    on u.id_usuario_asp=uir.UserId
+                    inner join aspnet_Roles r
+                    on uir.RoleId = r.RoleId
+                    inner join aspnet_Users au
+                    on au.UserId = u.id_usuario_asp", con))
+            {
+                var ds = new DataSet();
+                da.Fill(ds);
+
+                usus = ds.Tables[0].AsEnumerable().Select(
+                    fila => new Usuario
+                    {
+                        dni = fila.Field<string>("dni"),
+                        nombres = fila.Field<string>("nombres"),
+                        apellidos = fila.Field<string>("apellidos"),
+                        telefono = fila.Field<string>("dni"),
+                        id_usuario_asp = fila.Field<Guid>("id_usuario_asp").ToString(),
+                        nombre_usuario = fila.Field<string>("nombre_usuario"),
+                        rol = fila.Field<string>("rol")
+                    }).ToList();
+            }
+            return usus;
+        }
     }
 }

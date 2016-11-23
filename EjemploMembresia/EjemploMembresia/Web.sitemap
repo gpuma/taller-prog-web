@@ -1,14 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+OJO: los roles especificados aquí SOLO aplican visualmente!
+Es decir, yo puedo bloquear mi aplicación para que en el menú no le muestre
+todas las opciones de Contabilidad a un invitado, y, efectivamente no se le
+mostraría. Sin embargo, podría acceder sin ningún problema tipeando la URL.
+Es por eso que también se tienen que aplicar las reglas en el web.config
+manteniendo la congruencia
+-->
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
     <!--Como buena práctica el nodo raiz del sitio debe poder ser accedido por todos-->
     <siteMapNode url="~/Inicio.aspx" title="Inicio"  roles="*">
       <!--"roles" especifica a qué roles se les muestra el link en el menú del sitio-->
       <siteMapNode url="~/CreacionUsuario.aspx" title="Crear usuario" roles="*"/>
-      <siteMapNode title="Mantenimiento" roles="*" >
-        <siteMapNode url="~/Mantenimiento/VerUsuarios.aspx" title="Ver usuario" roles="administrador"/>
+      <siteMapNode title="Mantenimiento" roles="administrador" >
+        <siteMapNode url="~/Mantenimiento/VerUsuarios.aspx" title="Ver usuarios" roles="administrador"/>
       </siteMapNode>
       <siteMapNode title="Contabilidad"  description="" roles="administrador, usuario">
-        <siteMapNode url="~/Contabilidad/Kardex.aspx" title="Kardex"  description="" />
+        <siteMapNode url="~/Contabilidad/Kardex.aspx" title="Kardex"/>
+        <siteMapNode url="~/Contabilidad/Libros.aspx" title="Libros contables"/>
       </siteMapNode>
       <siteMapNode url="~/About.aspx" title="Acerca de..."  roles="administrador, usuario, invitado" description="" />
     </siteMapNode>

@@ -11,5 +11,14 @@ namespace EjemploMembresia.Mantenimiento {
     
     
     public partial class VerUsuarios {
+        
+        /// <summary>
+        /// grdUsuarios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdUsuarios;
     }
 }

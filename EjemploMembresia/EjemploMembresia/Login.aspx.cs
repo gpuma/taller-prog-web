@@ -17,6 +17,8 @@ namespace EjemploMembresia
 
         protected void ctlLogin_Authenticate(object sender, AuthenticateEventArgs e)
         {
+            //ValidateUser() valida las credenciales de un usuario y según eso
+            //le damos acceso
             if (Membership.ValidateUser(ctlLogin.UserName, ctlLogin.Password))
             {
                 //RedirectFromLoginPage redirige al usuario al recurso que trató de acceder

@@ -13,6 +13,8 @@ namespace EjemploMembresia
         {
             if (!IsPostBack)
             {
+                //Simplemente cargamos los roles desde nuestro modelo
+                //para mostrarlos en el dropdown
                 drpRol.DataSource = Modelo.nombresRoles;
                 drpRol.DataBind();
             }

@@ -4,22 +4,42 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <style type="text/css">
+        th, td {
+            padding: 5px;
+        }
+    </style>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
+        <h1>Ejemplo Membresía y Roles</h1>
+        <p>
+            Existen tres roles: administrador, usuario e invitado, los cuales pueden acceder a lo siguiente:
+        </p>
+         <ul>
+            <li>administrador: todo</li>
+            <li>usuario: contabilidad</li>
+            <li>invitado: acerca de...</li>
+        </ul>
     <div>
-        <asp:Button ID="btnLogout" Text="Cerrar sesión" Visible="false"  runat="server" 
-            onclick="btnLogout_Click"/>
-        <asp:TreeView ID="TreeView1" Runat="Server" DataSourceID="SiteMapDataSource1">
-        </asp:TreeView>
-        
+        <table>
+            <tr>
+            <td>
+                <asp:Button ID="btnLogout" Text="Cerrar sesión" Visible="false"  runat="server" 
+                onclick="btnLogout_Click"/>
+                <asp:TreeView ID="TreeView1" Runat="Server" DataSourceID="SiteMapDataSource1">
+                </asp:TreeView>
+            </td>
+            <td>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+            </tr>
+        </table>
         <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
-        
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
     </div>
     </form>
 </body>
